@@ -1,0 +1,8 @@
+E:\ITI\WorkingWithData\DataWareHouse\Project\OrdersDWH\SSAS_Tabular\bin\Model.asdatabase
+E:\ITI\WorkingWithData\DataWareHouse\Project\OrdersDWH\SSAS_Tabular\bin\Model.deploymenttargets
+E:\ITI\WorkingWithData\DataWareHouse\Project\OrdersDWH\SSAS_Tabular\bin\Model.deploymentoptions
+E:\ITI\WorkingWithData\DataWareHouse\Project\OrdersDWH\SSAS_Tabular\obj\Development\SSAS_Tabular.smproj.AssemblyReference.cache
+E:\ITI\WorkingWithData\DataWareHouse\Project\OrdersDWH\SSAS_Tabular\obj\Development\SSAS_Tabular.smproj.CoreCompileInputs.cache
+E:\ITI\WorkingWithData\DataWareHouse\Project\OrdersDWH\SSAS_Tabular\obj\Development\Model.asdatabase
+E:\ITI\WorkingWithData\DataWareHouse\Project\OrdersDWH\SSAS_Tabular\obj\Development\Model.deploymentoptions
+E:\ITI\WorkingWithData\DataWareHouse\Project\OrdersDWH\SSAS_Tabular\obj\Development\Model.deploymenttargets

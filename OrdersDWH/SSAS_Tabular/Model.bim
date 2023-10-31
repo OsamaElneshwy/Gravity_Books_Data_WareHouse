@@ -1,0 +1,455 @@
+{
+  "name": "SemanticModel",
+  "compatibilityLevel": 1200,
+  "model": {
+    "culture": "en-US",
+    "dataSources": [
+      {
+        "name": "SqlServer El-Neshwy gravity_books_DW",
+        "connectionString": "Provider=SQLOLEDB;Data Source=El-Neshwy;Initial Catalog=gravity_books_DW;Integrated Security=SSPI;Persist Security Info=false",
+        "impersonationMode": "impersonateServiceAccount",
+        "annotations": [
+          {
+            "name": "ConnectionEditUISource",
+            "value": "SqlServer"
+          }
+        ]
+      }
+    ],
+    "tables": [
+      {
+        "name": "BookDim",
+        "columns": [
+          {
+            "name": "book_PK",
+            "dataType": "int64",
+            "sourceColumn": "book_PK",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "book_BK",
+            "dataType": "int64",
+            "sourceColumn": "book_BK",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "title",
+            "dataType": "string",
+            "sourceColumn": "title",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "language",
+            "dataType": "string",
+            "sourceColumn": "language",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "publisher",
+            "dataType": "string",
+            "sourceColumn": "publisher",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "author",
+            "dataType": "string",
+            "sourceColumn": "author",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "start_date",
+            "dataType": "dateTime",
+            "sourceColumn": "start_date",
+            "formatString": "General Date",
+            "sourceProviderType": "DBTimeStamp"
+          },
+          {
+            "name": "end_date",
+            "dataType": "dateTime",
+            "sourceColumn": "end_date",
+            "formatString": "General Date",
+            "sourceProviderType": "DBTimeStamp"
+          },
+          {
+            "name": "is_current",
+            "dataType": "int64",
+            "sourceColumn": "is_current",
+            "sourceProviderType": "UnsignedTinyInt"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "BookDim",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [dbo].[BookDim].*   FROM [dbo].[BookDim] ",
+              "dataSource": "SqlServer El-Neshwy gravity_books_DW"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[BookDim].*   FROM [dbo].[BookDim] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "BookDim"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "CustomerDim",
+        "columns": [
+          {
+            "name": "customer_PK",
+            "dataType": "int64",
+            "sourceColumn": "customer_PK",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "customer_BK",
+            "dataType": "int64",
+            "sourceColumn": "customer_BK",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "customer_name",
+            "dataType": "string",
+            "sourceColumn": "customer_name",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "city",
+            "dataType": "string",
+            "sourceColumn": "city",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "country",
+            "dataType": "string",
+            "sourceColumn": "country",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "start_date",
+            "dataType": "dateTime",
+            "sourceColumn": "start_date",
+            "formatString": "General Date",
+            "sourceProviderType": "DBTimeStamp"
+          },
+          {
+            "name": "end_date",
+            "dataType": "dateTime",
+            "sourceColumn": "end_date",
+            "formatString": "General Date",
+            "sourceProviderType": "DBTimeStamp"
+          },
+          {
+            "name": "is_current",
+            "dataType": "int64",
+            "sourceColumn": "is_current",
+            "sourceProviderType": "UnsignedTinyInt"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "CustomerDim",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [dbo].[CustomerDim].*   FROM [dbo].[CustomerDim] ",
+              "dataSource": "SqlServer El-Neshwy gravity_books_DW"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[CustomerDim].*   FROM [dbo].[CustomerDim] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "CustomerDim"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "DateDim",
+        "columns": [
+          {
+            "name": "date_PK",
+            "dataType": "int64",
+            "sourceColumn": "date_PK",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "full_date",
+            "dataType": "string",
+            "sourceColumn": "full_date",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "calendar_year",
+            "dataType": "int64",
+            "sourceColumn": "calendar_year",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "calendar_quarter",
+            "dataType": "int64",
+            "sourceColumn": "calendar_quarter",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "calendar_month_num",
+            "dataType": "int64",
+            "sourceColumn": "calendar_month_num",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "calendar_month_name",
+            "dataType": "string",
+            "sourceColumn": "calendar_month_name",
+            "sourceProviderType": "WChar"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DateDim",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [dbo].[DateDim].*   FROM [dbo].[DateDim] ",
+              "dataSource": "SqlServer El-Neshwy gravity_books_DW"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[DateDim].*   FROM [dbo].[DateDim] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "DateDim"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "SalesFact",
+        "columns": [
+          {
+            "name": "id",
+            "dataType": "int64",
+            "sourceColumn": "id",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "customer_SK",
+            "dataType": "int64",
+            "sourceColumn": "customer_SK",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "book_SK",
+            "dataType": "int64",
+            "sourceColumn": "book_SK",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "shipping_SK",
+            "dataType": "int64",
+            "sourceColumn": "shipping_SK",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "date_SK",
+            "dataType": "int64",
+            "sourceColumn": "date_SK",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "price",
+            "dataType": "decimal",
+            "sourceColumn": "price",
+            "formatString": "\\$#,0.00;(\\$#,0.00);\\$#,0.00",
+            "sourceProviderType": "Currency",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"Currency\" Accuracy=\"2\" ThousandSeparator=\"True\"><Currency LCID=\"1033\" DisplayName=\"$ English (United States)\" Symbol=\"$\" PositivePattern=\"0\" NegativePattern=\"0\" /></Format>"
+              }
+            ]
+          },
+          {
+            "name": "costShipping",
+            "dataType": "decimal",
+            "sourceColumn": "costShipping",
+            "formatString": "\\$#,0.00;(\\$#,0.00);\\$#,0.00",
+            "sourceProviderType": "Currency",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"Currency\" Accuracy=\"2\" ThousandSeparator=\"True\"><Currency LCID=\"1033\" DisplayName=\"$ English (United States)\" Symbol=\"$\" PositivePattern=\"0\" NegativePattern=\"0\" /></Format>"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "SalesFact",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [dbo].[SalesFact].*   FROM [dbo].[SalesFact] ",
+              "dataSource": "SqlServer El-Neshwy gravity_books_DW"
+            }
+          }
+        ],
+        "measures": [
+          {
+            "name": "Total Price",
+            "expression": "sum(SalesFact[price])"
+          },
+          {
+            "name": "Total Cost Shipping",
+            "expression": "sum(SalesFact[costShipping])"
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[SalesFact].*   FROM [dbo].[SalesFact] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "SalesFact"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "ShippingDim",
+        "columns": [
+          {
+            "name": "shipping_PK",
+            "dataType": "int64",
+            "sourceColumn": "shipping_PK",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "shipping_BK",
+            "dataType": "int64",
+            "sourceColumn": "shipping_BK",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "method",
+            "dataType": "string",
+            "sourceColumn": "method",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "start_date",
+            "dataType": "dateTime",
+            "sourceColumn": "start_date",
+            "formatString": "General Date",
+            "sourceProviderType": "DBTimeStamp"
+          },
+          {
+            "name": "end_date",
+            "dataType": "dateTime",
+            "sourceColumn": "end_date",
+            "formatString": "General Date",
+            "sourceProviderType": "DBTimeStamp"
+          },
+          {
+            "name": "is_current",
+            "dataType": "int64",
+            "sourceColumn": "is_current",
+            "sourceProviderType": "UnsignedTinyInt"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "ShippingDim",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [dbo].[ShippingDim].*   FROM [dbo].[ShippingDim] ",
+              "dataSource": "SqlServer El-Neshwy gravity_books_DW"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[ShippingDim].*   FROM [dbo].[ShippingDim] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "ShippingDim"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "7fd08cc7-09f8-4606-a00c-83a131ccbeeb",
+        "fromTable": "SalesFact",
+        "fromColumn": "book_SK",
+        "toTable": "BookDim",
+        "toColumn": "book_PK"
+      },
+      {
+        "name": "95407088-41c3-446e-8bd5-7aea0a9749af",
+        "fromTable": "SalesFact",
+        "fromColumn": "customer_SK",
+        "toTable": "CustomerDim",
+        "toColumn": "customer_PK"
+      },
+      {
+        "name": "a04da579-1410-4de9-a65d-3b7aee4b4924",
+        "fromTable": "SalesFact",
+        "fromColumn": "date_SK",
+        "toTable": "DateDim",
+        "toColumn": "date_PK"
+      },
+      {
+        "name": "9836667c-30c4-4a60-9d81-0ef72dbc4383",
+        "fromTable": "SalesFact",
+        "fromColumn": "shipping_SK",
+        "toTable": "ShippingDim",
+        "toColumn": "shipping_PK"
+      }
+    ],
+    "annotations": [
+      {
+        "name": "ClientCompatibilityLevel",
+        "value": "400"
+      }
+    ]
+  },
+  "id": "SemanticModel"
+}

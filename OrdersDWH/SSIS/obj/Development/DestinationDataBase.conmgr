@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="DestinationDataBase"
+  DTS:DTSID="{29353BC8-1B33-4ACF-B499-4A60CD31D099}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=El-Neshwy;Initial Catalog=gravity_books_DW;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-SSIS-{29353BC8-1B33-4ACF-B499-4A60CD31D099}El-Neshwy.gravity_books_DW;Auto Translate=False;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
